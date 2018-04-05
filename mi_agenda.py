@@ -49,8 +49,9 @@ apm=StringVar()
 telefono=StringVar()
 correo=StringVar()
 conteeliminar=StringVar()
-color_fondo="#006#"
+color_fondo="dodger blue"
 color_letra="#FFF"
+color_boton="DodgerBlue4"
 ventana.title("Agenda con archivos")
 ventana.geometry("700x500")
 ventana.configure(background=color_fondo)
@@ -67,8 +68,8 @@ etiquetaC=Label(ventana,text="Correo: ",bg=color_fondo,fg=color_letra).place(x=5
 cajaC=Entry(ventana,textvariable=correo).place(x=150,y=170)
 etiquetaEliminar=Label(ventana,text="Telefono: ",bg=color_fondo,fg=color_letra).place(x=370,y=50)
 SpinTel=Spinbox(ventana,textvariable=conteeliminar).place(x=450,y=50)
-botonG=Button(ventana,text="Guardar",command=guardar,bg="#009",fg="white").place(x=180,y=200)
-botonEl=Button(ventana,text="Eliminar",command=eliminar,bg="#009",fg="white").place(x=470,y=80)
+botonG=Button(ventana,text="Guardar",command=guardar,bg=color_boton,fg="white").place(x=180,y=200)
+botonEl=Button(ventana,text="Eliminar",command=eliminar,bg=color_boton,fg="white").place(x=470,y=80)
 
 
 ventana.mainloop()
