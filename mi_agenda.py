@@ -37,7 +37,9 @@ def consultar():
     for elemento in lista:
         arreglo=elemento.split("$")
         valores.append(arreglo[3])
-        
+        r.insert(INSERT,arreglo[0]+"\t\t"+arreglo[1]+"\t\t"+arreglo[2]+"\t\t"+arreglo[3]+"\t\t"+arreglo[4]+"\t\n")
+    r.place(x=20,y=230)
+    spinTelefono=Spinbox(ventana,value=(valores),textvariable=conteeliminar).place(x=450,y=50)
     
     
 cargar()
