@@ -2,7 +2,12 @@ from tkinter import*
 from tkinter import messagebox
 
 def guardar():
-    print("Hola")
+    n=nombre.get()
+    ap=app.get()
+    am=apm.get()
+    c=correo.get
+    t=telefono.get()
+    lista.append(n+"$"+ap+"$"+am+"$"+c+"$"+t)
 
 def eliminar():
     print("Hola")
@@ -40,9 +45,11 @@ def consultar():
         r.insert(INSERT,arreglo[0]+"\t\t"+arreglo[1]+"\t\t"+arreglo[2]+"\t\t"+arreglo[3]+"\t\t"+arreglo[4]+"\t\n")
     r.place(x=20,y=230)
     spinTelefono=Spinbox(ventana,value=(valores),textvariable=conteeliminar).place(x=450,y=50)
+    if lista==[]:
+        spinTelefono=Spinbox(ventana,value=(valores)).place(x=450,y=50)
+    r.config(state=DISABLED)
     
-    
-cargar()
+
 lista=[]
 ventana=Tk()
 nombre=StringVar()
@@ -75,3 +82,4 @@ botonEl=Button(ventana,text="Eliminar",command=eliminar,bg=color_boton,fg="white
 
 
 ventana.mainloop()
+
