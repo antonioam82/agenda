@@ -5,12 +5,22 @@ def guardar():
     n=nombre.get()
     ap=app.get()
     am=apm.get()
-    c=correo.get
+    c=correo.get()
     t=telefono.get()
     lista.append(n+"$"+ap+"$"+am+"$"+c+"$"+t)
 
 def eliminar():
-    print("Hola")
+    eliminado=conteeliminar.get()
+    removido=False
+    for elemento in lista:
+        arreglo=elemento.split("$")
+        if conteeliminar.get()==arreglo[3]:
+            lista.remove(elemento)
+            removido=True
+    escribirContacto()
+    consultar()
+    if removido:
+        messagebox.showinfo("Eliminar","Elemento eliminado"+eliminado)
 
 def iniciarArchivo():
     archivo=open("ag.txt","a")
@@ -82,4 +92,3 @@ botonEl=Button(ventana,text="Eliminar",command=eliminar,bg=color_boton,fg="white
 
 
 ventana.mainloop()
-
