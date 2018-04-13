@@ -1,3 +1,4 @@
+#SE REQUIERE UN ARCHIVO DE TEXTO COMO EL "ag.txt" PRESENTE EN ESTE REPOSITORIO
 from tkinter import*
 from tkinter import messagebox
 
