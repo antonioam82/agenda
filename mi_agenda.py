@@ -1,13 +1,23 @@
 from tkinter import*
 from tkinter import messagebox
 
+lista=[]
+
 def guardar():
     n=nombre.get()
     ap=app.get()
     am=apm.get()
     c=correo.get()
     t=telefono.get()
-    lista.append(n+"$"+ap+"$"+am+"$"+c+"$"+t)
+    lista.append(n+"$"+ap+"$"+am+"$"+t+"$"+c)
+    escribirContacto()
+    messagebox.showinfo("Guardado","El contacto ha sido guardado en la egenda")
+    nombre.set("")
+    app.set("")
+    apm.set("")
+    correo.set("")
+    telefono.set("")
+    consultar()
 
 def eliminar():
     eliminado=conteeliminar.get()
@@ -48,11 +58,11 @@ def consultar():
     r=Text(ventana,width=80,height=15)
     lista.sort()
     valores=[]
-    r.insert(INSERT,"Nombre\t\tApellido P\t\tApellido M\t\tTelefono\t\tCorreo\n")
+    r.insert(INSERT,"Nombre\tApellido P\t\tApellido M\t\tTelefono\t\tCorreo\n")
     for elemento in lista:
         arreglo=elemento.split("$")
         valores.append(arreglo[3])
-        r.insert(INSERT,arreglo[0]+"\t\t"+arreglo[1]+"\t\t"+arreglo[2]+"\t\t"+arreglo[3]+"\t\t"+arreglo[4]+"\t\n")
+        r.insert(INSERT,arreglo[0]+"\t"+arreglo[1]+"\t\t"+arreglo[2]+"\t\t"+arreglo[3]+"\t\t"+arreglo[4]+"\t\n")
     r.place(x=20,y=230)
     spinTelefono=Spinbox(ventana,value=(valores),textvariable=conteeliminar).place(x=450,y=50)
     if lista==[]:
@@ -60,7 +70,7 @@ def consultar():
     r.config(state=DISABLED)
     
 
-lista=[]
+
 ventana=Tk()
 nombre=StringVar()
 app=StringVar()
